@@ -1,0 +1,74 @@
+
+	<!--================ Start Addtransaction Area =================-->
+	<section class="appointment-area" style="background-color: rgb(227, 101, 101);">
+		<div class="container">
+			<div class="row justify-content-between align-items-center appointment-wrap">
+				<div class="col-lg-5 col-md-6 appointment-left" >
+					<h1>
+						EDIT AND UPDATE AN ACCOUNT
+					</h1>
+				</div>
+				<div class="col-lg-6 col-md-6 pt-60 pb-60">
+					<div class="appointment-right">
+						<form class="form-wrap" action="/updateaccount/<%=account.id%>" method="post">
+							<h3 class="pb-20 text-center mb-20">Update Account</h3>
+                            <label for="accountname">Account Name</label>
+							<input type="text" class="form-control" name="accountname" value="<%=account.accountname%>" >
+							<div class="text-center confirm_btn_box">
+								<button class="main_btn text-uppercase">update</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================ End Appointment Area =================-->
+
+	
+
+	<!--================ start footer Area =================-->
+	<footer class="footer-area section_gap">
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-lg-4  col-md-6">
+					<div class="single-footer-widget mail-chimp">
+						<h6 class="mb-20">Contact Us</h6>
+						<p>
+							56/8, Santa bullevard, Rocky beach, San fransisco, Los angeles, USA
+						</p>
+						<h3>012-6532-568-9746</h3>
+						<h3>012-6532-568-97468</h3>
+					</div>
+				</div>
+				
+			</div>
+
+			<div class="row footer-bottom d-flex justify-content-between">
+				<p class="col-lg-8 col-sm-12 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> <i class="fa fa-heart-o" aria-hidden="true"></i> 
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+				</p>
+				<div class="col-lg-4 col-sm-12 footer-social">
+					<a href="#">
+						<i class="fa fa-facebook"></i>
+					</a>
+					<a href="#">
+						<i class="fa fa-twitter"></i>
+					</a>
+					<a href="#">
+						<i class="fa fa-dribbble"></i>
+					</a>
+					<a href="#">
+						<i class="fa fa-behance"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--================ End footer Area =================-->
+
+
+
+	

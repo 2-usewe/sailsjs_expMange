@@ -1,0 +1,155 @@
+
+
+	<!--================Header Menu Area =================-->
+	<header class="header_area">
+		<div class="main_menu">
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<a class="navbar-brand logo_h" href="index.html">
+						<img src="img/OIP.jpg" height="40px" width="40px" alt="ExpenseManager">ExpenseManager
+					</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+					 aria-expanded="false" aria-label="Toggle navigation">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+						<div class="row ml-0 w-100">
+							<div class="col-lg-12 pr-0">
+								<ul class="nav navbar-nav center_nav pull-right">
+									<li class="nav-item">
+										<a class="nav-link" href="/users">Home</a>
+									</li>
+									<li class="nav-item active">
+										<a class="nav-link" href="/addaccount">NewAccount</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="/signup">signup</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="/login">login</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="/logout">logout</a>
+									</li>
+									
+									<li class="nav-item">
+										<a class="nav-link" href="#contact">Contact</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!--================Header Menu Area =================-->
+
+	<!--================ Banner Area =================-->
+	<section class="banner_area" style="background-color: rgb(211, 86, 86);">
+		<div class="banner_inner d-flex align-items-center">
+			<div class="container">
+				<div class="banner_content text-left">
+					<h2>USER ACCOUNTS</h2>
+					<div class="page_link">
+						<a href="/addaccount" style="color: rgb(134, 221, 253);">ADD ACCOUNT</a>
+						<!-- <a href="departments.html">Departments</a> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Banner Area =================-->
+
+	<!--================ Procedure Category Area =================-->
+	<section class="procedure_category section_gap_custom">
+		<div class="container">
+			<div class="row justify-content-center section-title-wrap">
+				<div class="col-lg-12">
+					<h1>USER: <span><%=username%></span> </h1>
+				</div>
+			</div>
+
+			<div class="row">
+				<table class="tables">
+					<thead class="t_head">
+						<tr>
+							<th>Account Name</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% account.forEach(function(account){%>
+						<tr>
+							
+							<td><%=account.accountname%></td>
+							<td>
+								<a href="/transaction/<%=account.id%>/all" class="btn border-shadow update" style="background-color: rgb(29, 144, 170);">
+									<span class="text-gradient" style="color: rgb(252, 252, 252);" > Transaction </span>
+								</a>
+								<a href="/accountdetails/<%=account.id%>" class="btn border-shadow update" style="background-color: rgb(29, 144, 170);">
+									<span class="text-gradient" style="color: rgb(252, 252, 252);" > Account details </span>
+								</a>
+								<a href="/editaccount/<%=account.id%>" class="btn border-shadow update" style="background-color: rgb(48, 226, 28);">
+									<span class="text-gradient" style="color: rgb(252, 252, 252);" > Edit Account </span>
+								</a>
+								<a href="/deleteaccount/<%=account.id%>" method="get" class="btn border-shadow update" style="background-color: rgb(250, 13, 13);" >
+									<span class="text-gradient" style="color: rgb(255, 251, 251);">Delete </span>
+								</a>
+							</td>
+						</tr>
+						<%})%>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+	<!--================ End Procedure Category Area =================-->
+
+	<!-- start footer Area -->
+	<footer class="footer-area section_gap" id="contact">
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-lg-4  col-md-6">
+					<div class="single-footer-widget mail-chimp">
+						<h6 class="mb-20">Contact Us</h6>
+						<p>
+							56/8, Santa bullevard, Rocky beach, San fransisco, Los angeles, USA
+						</p>
+						<h3>012-6532-568-9746</h3>
+						<h3>012-6532-568-97468</h3>
+					</div>
+				</div>
+				
+			</div>
+
+			<div class="row footer-bottom d-flex justify-content-between">
+				<p class="col-lg-8 col-sm-12 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> <i class="fa fa-heart-o" aria-hidden="true"></i>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+				</p>
+				<div class="col-lg-4 col-sm-12 footer-social">
+					<a href="#">
+						<i class="fa fa-facebook"></i>
+					</a>
+					<a href="#">
+						<i class="fa fa-twitter"></i>
+					</a>
+					<a href="#">
+						<i class="fa fa-dribbble"></i>
+					</a>
+					<a href="#">
+						<i class="fa fa-behance"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- End footer Area -->
+
+</html>
