@@ -21,4 +21,10 @@ module.exports.policies = {
      'signup':true,
      'login':true,
    }, 
+   'AccountController':{
+     '*':['isLogedIn'],
+   },
+   'TransactionController':{
+    '*':['isLogedIn'],
+  },
 };
