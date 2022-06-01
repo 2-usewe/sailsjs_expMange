@@ -2,6 +2,11 @@
 <div class="container">
     <div class="register-div">
         <h4 class="maintitle">User Log IN</h4>
+        <% flash.get('success').forEach(function (message) { %>
+            <div style="color:rgb(255, 6, 6);text-align: center;">
+              <%= message %>
+            </div>
+        <% }) %>
         <form action="" method="post" class="form-controll" onsubmit ="return verifyPassword()">
             <label for="email">Email</label><br>
             <input type="text" name="email"><br>

@@ -8,6 +8,7 @@
 module.exports = {
   find:function(req,res){
       var accountId=req.param('id');
+      var userid=req.session.user;
       Account.findOne({id:accountId},function(err,account){
         if(err){return res.serverError(err);}
         sails.log("foundaccount: ",account);
@@ -17,9 +18,11 @@ module.exports = {
           .exec((err,alltransaction)=>{
               if(err){return res.serverError(err);}
               sails.log('allTransactions: ',alltransaction);
+              sails.log('userid: ',userid);
               return res.view('transaction/transactions',{
                 account:account,
                 transaction:alltransaction,
+                userid:userid,
               });
           });
       });

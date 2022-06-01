@@ -52,6 +52,11 @@
 				<div class="banner_content row">
 					<div class="col-lg-12">
 						<h1>We Care for Your Assets Every Moment</h1>
+						<% flash.get('success').forEach(function (message) { %>
+							<div style="color:green;">
+							  <%= message %>
+							</div>
+						<% }) %>
                         <p>if you have an account!.. <span><a href="/login" style="color:rgb(2, 2, 85) ;">login</a></span></p>
                         <p>New user!..<span><a href="/signup" style="color:rgb(2, 2, 85) ;">signup</a></span></p>
 						<p><a class="main_btn mr-10" href="/signup">get started</a></p>

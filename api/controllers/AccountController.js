@@ -13,12 +13,12 @@ find:function(req,res){
     var userid=req.session.user;
     sails.log("user's userid",userid);
     //sails.log('req.param.id:',req.param('id'))
-    Account.find({})
-    .populate('members').exec((err,account)=>{
+    User.findOne({id:userid})
+    .populate('acco_unts').exec((err,account)=>{
         if(err)return sails.log(err);
         var username=req.session.username;
         sails.log('All accounts : ',account);
-        return res.view('account/useracc',{account:account,username:username});
+        return res.view('account/useracc',{account:account.acco_unts,username:username});
     })
 },
 

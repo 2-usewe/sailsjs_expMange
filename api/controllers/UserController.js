@@ -69,14 +69,18 @@ if (req.param('password').length < 8) {
 login:function(req,res){
   //var email=req.param('email');
   User.findOne({email:req.param('email')}).exec((err,user)=>{
-    if(err)return sails.log(err);
+    if(err){  
+      return sails.log(err)
+    };
     req.session.user=user.id;
     req.session.username=user.name;
     sails.log('name:',user.name,"user_id:",req.session.user)
     bcrypt.compare(req.param('password'),user.password,function(err,users){
-      if(err){return sails.log(err)}
+      if(err){
+        return sails.log(err)}
       if(!users){
-      return res.redirect('/login')
+        req.addFlash('success', '**email id or password not match!');
+      return res.redirect('/login');
       }
       else{
         sails.log('true users:',users);
@@ -91,6 +95,7 @@ login:function(req,res){
 },
 logoutFn:function(req,res){
   req.session.user = null;
+  req.addFlash('success', 'Please login to Use forther...!');
  // res.logout();
   //jwt.destroy(token);
   res.redirect('/');
